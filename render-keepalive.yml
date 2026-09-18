@@ -1,0 +1,15 @@
+name: Keep Render awake
+
+on:
+  schedule:
+    - cron: '*/6 * * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render backend
+        run: |
+          TARGET_URL="https://docaposte-maileva.onrender.com"
+          echo "Pinging $TARGET_URL"
+          curl -fsS "$TARGET_URL" || (echo "Ping failed" && exit 1)
